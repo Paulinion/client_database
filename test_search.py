@@ -14,11 +14,9 @@ class TestSystem(unittest.TestCase):
         self.system.add_client('DSX', 'asd2@gmail.com', 'Nastya')
 
 
-    # Проверка на ошибку при неверном количестве аргументов
-    def test_add_client(self):
-        self.assertRaises(TypeError, lambda: self.system.add_client('DSX'))
-
-
+ #Проверка функции поиска контактного лица по названию компании
+    def test_search(self):
+        self.assertEqual(self.system.search('DSX')[0],'Nastya')
 
 if __name__ == '__main__':
     unittest.main()
